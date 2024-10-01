@@ -61,6 +61,7 @@ import ContactIcon from "./assets/icon/Contact.svg";
 import PianiIcon from "./assets/icon/PianiButton.svg";
 import LoginIcon from "./assets/icon/login.svg";
 import PlayCircle from "./assets/icon/PlayCircle.svg";
+import LogoPallini from "./assets/pallini-logo.svg";
 
 const TypingEffect = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -477,7 +478,7 @@ const Header = () => {
         transition={{ duration: 1, delay: 0.1 }}
       >
         <img
-          src="src/assets/pallini-logo.svg"
+          src={LogoPallini}
           alt="Logo Pallini"
           className="centered-image static-image"
         />
