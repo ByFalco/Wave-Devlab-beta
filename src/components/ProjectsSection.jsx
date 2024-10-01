@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import "../styles/ProjectsSection.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import lineLeftProjects from "../assets/line-left.svg";
+import lineProjects from "../assets/line.svg";
+import chipLeftProjects from "../assets/chip.svg";
+import exampleImage from "../assets/example.png";
+import example5Image from "../assets/example5.png";
 
 const ProjectsSection = () => {
   const [isVariantA, setIsVariantA] = useState(true);
@@ -15,22 +20,22 @@ const ProjectsSection = () => {
   }, []);
 
   const projects = [
-    { id: 1, image: "src/assets/example.png" },
-    { id: 2, image: "src/assets/example.png" },
-    { id: 3, image: "src/assets/example5.png" },
-    { id: 4, image: "src/assets/example5.png" },
-    { id: 5, image: "src/assets/example.png" },
-    { id: 6, image: "src/assets/example5.png" },
-    { id: 7, image: "src/assets/example.png" },
-    { id: 8, image: "src/assets/example5.png" },
-    { id: 9, image: "src/assets/example.png" },
-    { id: 10, image: "src/assets/example5.png" },
-    { id: 11, image: "src/assets/example5.png" },
-    { id: 12, image: "src/assets/example.png" },
-    { id: 13, image: "src/assets/example.png" },
-    { id: 14, image: "src/assets/example5.png" },
-    { id: 15, image: "src/assets/example.png" },
-    { id: 16, image: "src/assets/example5.png" },
+    { id: 1, image: exampleImage },
+    { id: 2, image: exampleImage },
+    { id: 3, image: example5Image },
+    { id: 4, image: example5Image },
+    { id: 5, image: exampleImage },
+    { id: 6, image: example5Image },
+    { id: 7, image: exampleImage },
+    { id: 8, image: example5Image },
+    { id: 9, image: exampleImage },
+    { id: 10, image: example5Image },
+    { id: 11, image: example5Image },
+    { id: 12, image: exampleImage },
+    { id: 13, image: exampleImage },
+    { id: 14, image: example5Image },
+    { id: 15, image: exampleImage },
+    { id: 16, image: example5Image },
     // Aggiungi più progetti secondo necessità
   ];
 
@@ -71,7 +76,7 @@ const ProjectsSection = () => {
         <div className="bottom-left-shadow"></div>
         <div className="bottom-shadow"></div>
         <motion.img
-          src="src/assets/line-left.svg"
+          src={lineLeftProjects}
           alt="Line Left projects"
           className="line-left-projects"
           initial={{ opacity: 0, x: -20 }}
@@ -80,7 +85,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         />
         <motion.img
-          src="src/assets/chip.svg"
+          src={chipLeftProjects}
           alt="Chip Left projects"
           className="chip chip-left-projects"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -89,7 +94,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
         />
         <motion.img
-          src="src/assets/line.svg"
+          src={lineProjects}
           alt="Line projects"
           className="line-projects"
           initial={{ opacity: 0, x: 20 }}

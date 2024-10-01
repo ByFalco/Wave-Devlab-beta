@@ -73,6 +73,18 @@ import LineRight from "./assets/line-right.svg";
 import Chip from "./assets/chip.svg";
 import Line from "./assets/line.svg";
 import Line2 from "./assets/line2.svg";
+import LogoV2 from "./assets/logo-v2.png";
+import lvl1Image from "./assets/lvl1.png";
+import lvl2Image from "./assets/lvl2.png";
+import lvl3Image from "./assets/lvl3.png";
+import lvl4Image from "./assets/lvl4.png";
+
+const levelImages = {
+  1: lvl1Image,
+  2: lvl2Image,
+  3: lvl3Image,
+  4: lvl4Image,
+};
 
 const TypingEffect = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -496,7 +508,7 @@ const Header = () => {
         <AnimatePresence mode="wait">
           <motion.img
             key={currentImage}
-            src={`src/assets/lvl${currentImage}.png`}
+            src={levelImages[currentImage]}
             alt={`Livello ${currentImage}`}
             className="centered-image dynamic-image"
             initial={{ opacity: 0 }}
@@ -513,11 +525,7 @@ const Header = () => {
         >
           <div className="square-mini-container">
             <div className="square-content">
-              <img
-                src="src/assets/logo-v2.png"
-                alt="Logo Wave"
-                className="square-logo"
-              />
+              <img src={LogoV2} alt="Logo Wave" className="square-logo" />
             </div>
           </div>
         </motion.div>

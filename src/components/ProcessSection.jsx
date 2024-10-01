@@ -8,6 +8,9 @@ import {
   faCode,
   faRocket,
 } from "@fortawesome/free-solid-svg-icons";
+import lineLeft from "../assets/line-left.svg";
+import lineRight from "../assets/line-right.svg";
+import chip from "../assets/chip.svg";
 
 const ProcessSection = () => {
   return (
@@ -36,12 +39,12 @@ const ProcessSection = () => {
       >
         <div className="process-images-container">
           <img
-            src="src/assets/line-left.svg"
+            src={lineLeft}
             alt="Process Line Left"
             className="process-line-left"
           />
           <img
-            src="src/assets/chip.svg"
+            src={chip}
             alt="Process Chip Left"
             className="process-chip-left"
           />
@@ -53,12 +56,12 @@ const ProcessSection = () => {
             tecnica e valore, seguiamo ogni passo con te.
           </p>
           <img
-            src="src/assets/line-right.svg"
+            src={lineRight}
             alt="Process Line Right"
             className="process-line-right"
           />
           <img
-            src="src/assets/chip.svg"
+            src={chip}
             alt="Process Chip Right"
             className="process-chip-right"
           />
