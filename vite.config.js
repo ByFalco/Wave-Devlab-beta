@@ -7,22 +7,6 @@ export default defineConfig({
   define: {
     "process.env": {},
   },
-  server: {
-    proxy: {
-      "/socket.io": {
-        target: "http://localhost:3000",
-        ws: true,
-      },
-      "/api": {
-        target: "http://localhost:3000",
-      },
-      resolve: {
-        alias: {
-          "@": "/src",
-        },
-      },
-    },
-  },
   build: {
     rollupOptions: {
       external: ["react-router-dom"],
