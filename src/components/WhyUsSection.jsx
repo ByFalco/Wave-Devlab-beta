@@ -10,6 +10,7 @@ import {
   faPlay,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
+import Prova from "../assets/prova.png";
 
 const WhyUsSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -101,7 +102,7 @@ const WhyUsSection = () => {
       >
         <div className="main-card-content">
           <img
-            src="src/assets/prova.png"
+            src={Prova}
             alt="Anteprima del video"
             className="video-wave-preview"
           />
