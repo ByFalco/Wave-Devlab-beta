@@ -62,6 +62,17 @@ import PianiIcon from "./assets/icon/PianiButton.svg";
 import LoginIcon from "./assets/icon/login.svg";
 import PlayCircle from "./assets/icon/PlayCircle.svg";
 import LogoPallini from "./assets/pallini-logo.svg";
+import Pallini1 from "./assets/pallini1.svg";
+import Pallini2 from "./assets/pallini2.svg";
+import Icon1 from "./assets/icon1.png";
+import Icon2 from "./assets/icon2.png";
+import Icon3 from "./assets/icon3.png";
+import Icon4 from "./assets/icon4.png";
+import LineLeft from "./assets/line-left.svg";
+import LineRight from "./assets/line-right.svg";
+import Chip from "./assets/chip.svg";
+import Line from "./assets/line.svg";
+import Line2 from "./assets/line2.svg";
 
 const TypingEffect = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -372,7 +383,7 @@ const Header = () => {
     <header className="header">
       <GoldenGlowEffect />
       <motion.img
-        src="src/assets/pallini1.svg"
+        src={Pallini1}
         alt="Pallini 1"
         className="pallini pallini-left"
         initial={{ opacity: 0 }}
@@ -384,7 +395,7 @@ const Header = () => {
         }}
       />
       <motion.img
-        src="src/assets/pallini2.svg"
+        src={Pallini2}
         alt="Pallini 2"
         className="pallini pallini-right"
         initial={{ opacity: 0 }}
@@ -396,7 +407,7 @@ const Header = () => {
         }}
       />
       <motion.img
-        src="src/assets/icon1.png"
+        src={Icon1}
         alt="Icona 1"
         className="floating-icon left-top"
         initial={{ opacity: 0, scale: 0, rotate: -180 }}
@@ -415,7 +426,7 @@ const Header = () => {
         whileHover={{ scale: 1.1, rotate: 5 }}
       />
       <motion.img
-        src="src/assets/icon3.png"
+        src={Icon3}
         alt="Icona 2"
         className="floating-icon left-bottom"
         initial={{ opacity: 0, x: -100, y: 100 }}
@@ -433,7 +444,7 @@ const Header = () => {
         whileHover={{ scale: 1.1, x: -10 }}
       />
       <motion.img
-        src="src/assets/icon2.png"
+        src={Icon2}
         alt="Icona 3"
         className="floating-icon right-top"
         initial={{ opacity: 0, scale: 2, y: -100 }}
@@ -451,7 +462,7 @@ const Header = () => {
         whileHover={{ scale: 1.1, rotate: -5 }}
       />
       <motion.img
-        src="src/assets/icon4.png"
+        src={Icon4}
         alt="Icona 4"
         className="floating-icon right-bottom"
         initial={{ opacity: 0, scale: 0, rotate: 90 }}
@@ -533,16 +544,8 @@ const Header = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
       >
-        <img
-          src="src/assets/line-left.svg"
-          alt="Line Left"
-          className="line-left"
-        />
-        <img
-          src="src/assets/chip.svg"
-          alt="Chip Left"
-          className="chip chip-left"
-        />
+        <img src={LineLeft} alt="Line Left" className="line-left" />
+        <img src={Chip} alt="Chip Left" className="chip chip-left" />
         <div className="buttons-container">
           <button
             className="cta-button secondary clickable"
@@ -555,16 +558,8 @@ const Header = () => {
             Guarda il video
           </button>
         </div>
-        <img
-          src="src/assets/line-right.svg"
-          alt="Line Right"
-          className="line-right"
-        />
-        <img
-          src="src/assets/chip.svg"
-          alt="Chip Right"
-          className="chip chip-right"
-        />
+        <img src={LineRight} alt="Line Right" className="line-right" />
+        <img src={Chip} alt="Chip Right" className="chip chip-right" />
       </motion.div>
       <motion.div
         className="quote-form-container"
@@ -576,9 +571,9 @@ const Header = () => {
           ease: [0.645, 0.045, 0.355, 1.0],
         }}
       >
-        <img src="src/assets/line2.svg" alt="Line 2" className="line2" />
+        <img src={Line2} alt="Line 2" className="line2" />
         <QuoteForm />
-        <img src="src/assets/line.svg" alt="Line" className="line" />
+        <img src={Line} alt="Line" className="line" />
       </motion.div>
       <motion.div
         className="scroll-down-container"
