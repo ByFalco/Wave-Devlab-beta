@@ -140,7 +140,7 @@
   align-items: center;
   text-align: center;
   box-shadow: 0 0 10px rgba(97, 87, 0, 0.48);
-  background-image: url("src/assets/line-background.svg"); /* Aggiungi questa riga */
+  background-image: var(--line-background-image);
   background-size: cover; /* Aggiungi questa riga */
   background-position: center; /* Aggiungi questa riga */
   z-index: 0; /* Aumentato il valore di z-index */

@@ -11,10 +11,15 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import Prova from "../assets/prova.png";
+import lineBackgroundImage from "../assets/line-background.svg";
 
 const WhyUsSection = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [showCloseButton, setShowCloseButton] = useState(false);
+  document.documentElement.style.setProperty(
+    "--line-background-image",
+    `url(${lineBackgroundImage})`
+  );
 
   const handlePlayClick = () => {
     const mainCard = document.querySelector(".main-card");
