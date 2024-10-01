@@ -59,7 +59,7 @@ import EsempiIcon from "./assets/icon/Esempi.svg";
 import AboutUsIcon from "./assets/icon/aboutus.svg";
 import ContactIcon from "./assets/icon/Contact.svg";
 import PianiIcon from "./assets/icon/PianiButton.svg";
-import LoginIcon from "./assets/icon/Login.svg";
+import LoginIcon from "./assets/icon/login.svg";
 import PlayCircle from "./assets/icon/PlayCircle.svg";
 
 const TypingEffect = ({ words }) => {
