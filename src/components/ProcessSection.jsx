@@ -11,8 +11,13 @@ import {
 import lineLeft from "../assets/line-left.svg";
 import lineRight from "../assets/line-right.svg";
 import chip from "../assets/chip.svg";
+import lineBackgroundImage from "../assets/line-background.svg";
 
 const ProcessSection = () => {
+  document.documentElement.style.setProperty(
+    "--process-card-background-image",
+    `url(${lineBackgroundImage})`
+  );
   return (
     <motion.section
       className="process-section"
