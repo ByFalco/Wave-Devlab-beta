@@ -1,0 +1,143 @@
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .navbar-logo {
+    transform: none;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-buttons {
+    display: none;
+  }
+
+  .nav-item a {
+    font-size: 18px;
+    margin-bottom: -3px;
+    align-items: left;
+  }
+
+  .nav-item a .fa-icon {
+    display: none;
+  }
+
+  .nav-item a span {
+    margin-left: -1px;
+    transform: none;
+  }
+
+  .nav-item a:hover,
+  .nav-item.active a {
+    background: transparent;
+    border: none;
+    color: #fff;
+  }
+
+  .hamburger-menu {
+    display: block;
+    font-size: 1.5em;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above the sidebar */
+  }
+
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -90%;
+    width: 90%;
+    height: 100vh; /* Use viewport height */
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 69px;
+  }
+
+  .sidebar .nav-item {
+    margin: 10px 0;
+  }
+
+  .sidebar .navbar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    transform: translateY(-10px);
+  }
+
+  .sidebar .navbar-button.piani {
+    margin-bottom: 20px;
+    margin-left: -180px;
+    width: 30%;
+    padding: 8px 10px;
+    font-size: 1.1em;
+    background: linear-gradient(
+      309deg,
+      rgb(255, 236, 166) 2.25225%,
+      rgb(255, 204, 51) 48.0785%,
+      rgb(255, 170, 0) 100%
+    );
+    color: #212121;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .sidebar .navbar-button.piani:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
+  }
+
+  .sidebar .auth-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 8px 10px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .sidebar .auth-link:hover {
+    background-color: #fff;
+    color: #212121;
+  }
+
+  .sidebar .auth-link .auth-icon {
+    margin-right: 10px;
+  }
+
+  body.sidebar-open {
+    overflow: hidden; /* Prevent scrolling when sidebar is open */
+  }
+}

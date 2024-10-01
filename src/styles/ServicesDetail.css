@@ -1,0 +1,126 @@
+.service-detail-container {
+  display: flex;
+  padding: 100px;
+  width: 1200px; /* Aggiungi questa linea */
+  margin: 0 auto; /* Centra il contenuto */
+  font-family: var(--font-secondary);
+}
+
+.categories-column {
+  width: 20%;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.categories-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.categories-column li {
+  margin-bottom: 10px;
+}
+
+.categories-column a {
+  text-decoration: none;
+  color: #333;
+}
+
+.service-content-detail {
+  width: 80%;
+  padding-left: 20px;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #ffd700;
+}
+
+.arrow-right-detail {
+  margin: 0 10px;
+  height: 14px;
+  color: #ffd700;
+}
+
+.service-grid-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-card-detail {
+  position: relative;
+  background-color: hsla(0, 0%, 53%, 0.1);
+  border-radius: 10px;
+  border: 1px solid #ffffff1a;
+  padding: 20px;
+  width: 253px;
+  height: 235px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.service-card-detail:hover {
+  background-color: hsla(0, 0%, 53%, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.15);
+}
+
+.service-example-image-detail {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.button-group-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spazio tra i pulsanti */
+}
+
+.button-group-detail button {
+  padding: 10px 15px;
+  background-color: #ffd700;
+  color: rgb(7, 7, 8);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+}
+
+.button-group-detail button:hover {
+  background-color: #ffb800;
+}
+
+.service-buttons-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spazio tra i pulsanti */
+  margin-top: 10px;
+}
+
+.service-button-detail {
+  padding: 8px 12px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-secondary);
+}
+
+.service-button-detail:hover {
+  background-color: #5a6268;
+}

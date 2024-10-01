@@ -1,0 +1,156 @@
+@import "../App.css";
+
+/* Animazione di deformazione del cursore */
+@keyframes deform {
+  0% {
+    transform: translate(-50%, -50%) scale(1) skewX(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2) skewX(-10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) skewX(0deg);
+  }
+}
+
+/* Animazione di bounce per il cursore */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  20% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+  40% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  60% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
+  80% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9px; /* Ridotto da 20px a 12px */
+  height: 9px; /* Ridotto da 20px a 12px */
+  background-color: rgba(255, 255, 255, 0.9); /* Più luminoso */
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.6s ease-in-out, box-shadow 0.6s ease-in-out,
+    border-color 0.6s ease-in-out;
+  z-index: 9999;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Aggiunto effetto di bagliore */
+}
+
+.custom-cursor::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px; /* Ridotto da 40px a 24px */
+  height: 24px; /* Ridotto da 40px a 24px */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.custom-cursor.active::before {
+  opacity: 1;
+}
+
+.custom-cursor.active {
+  transform: translate(-50%, -50%) scale(1.3); /* Scala leggermente ridotta */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Leggermente meno opaco quando attivo */
+  border-color: #000000;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7); /* Intensificato l'effetto di bagliore */
+}
+
+.custom-cursor.hover-element {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Nuovo stile per il bordo esterno */
+.custom-cursor.hover-element::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 21px; /* Dimensione maggiore rispetto al cursore principale */
+  height: 21px; /* Dimensione maggiore rispetto al cursore principale */
+  border: 1px solid #ffffffcc; /* Bordo spesso 2px */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.6s ease-in-out;
+}
+
+.custom-cursor.deform {
+  animation: deform 0.5s forwards;
+}
+
+.custom-cursor.bounce {
+  animation: bounce 0.6s ease;
+}
+
+/* Modifica l'animazione della linea per renderla più reattiva */
+.golden-glow-line.bounce {
+  animation: lineBounce 0.6s ease;
+}
+
+.custom-cursor.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-cursor.visible {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Nascondi il cursore personalizzato su dispositivi touch */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+.custom-cursor.hover-main-card {
+  width: 38px; /* Dimensione maggiore */
+  height: 38px; /* Dimensione maggiore */
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px; /* Dimensione del testo */
+  color: #000; /* Colore del testo */
+}
+
+.custom-cursor.hover-main-card::before {
+  content: none; /* Rimuove il testo */
+}
+
+.play-black-icon {
+  width: 20px; /* Dimensione dell'icona */
+  height: 20px; /* Dimensione dell'icona */
+}
+
+.custom-cursor.video-open {
+  display: none; /* Nasconde il cursore personalizzato quando il video è aperto */
+}

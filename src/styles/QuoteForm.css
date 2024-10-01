@@ -1,0 +1,249 @@
+.quote-form {
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin: 31px auto;
+  padding: 0 25px 2px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(97, 87, 0, 0.48);
+  overflow: hidden;
+  transition: all 0.9s ease, box-shadow 0.8s ease;
+  transform: translateX(0) !important;
+  z-index: 9999;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote-form::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: linear-gradient(
+      0deg,
+      rgba(10, 9, 0, 0.96),
+      rgba(07, 07, 08, 0.96)
+    ),
+    linear-gradient(100.41deg, #000000 0.52%, #070708 100.52%);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.quote-form h2 {
+  font-family: var(--font-primary);
+  letter-spacing: -0.01em;
+  font-size: 1.7rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 12px;
+  margin-top: 14px;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 21px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 25px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  border-radius: 10px;
+  color: var(--secondary-color);
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.quote-form textarea {
+  height: 70px;
+  width: 100%;
+  position: relative;
+}
+
+/* Correzione del selettore */
+.quote-form textarea:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+.icon-button {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%) !important;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10; /* Assicura che il pulsante sia sopra l'input */
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.icon-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.quote-form button {
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--secondary-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.next-button,
+.submit-button {
+  background: linear-gradient(45deg, var(--primary-color), #ffb800);
+  color: var(--background-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.skip-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--secondary-color);
+  margin-left: 10px;
+}
+
+.step-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote-form-container {
+  text-align: center;
+  margin-top: -10px;
+  position: relative;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+.quote-form.highlight-effect {
+  animation: highlight-pulse 0.8s ease-out;
+  animation-iteration-count: 3;
+  box-shadow: none;
+}
+
+.quote-form.highlight-effect-complete {
+  box-shadow: 0 0 10px rgba(97, 87, 0, 0.48);
+}
+
+.quote-form-container p {
+  margin-top: 10px;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), #ffb800);
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+  transition: width 0.5s ease-in-out;
+}
+
+.email-icon {
+  position: absolute;
+  right: 45px;
+  top: 21%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.email-icon.loading {
+  color: #ffd700;
+}
+
+.email-icon.valid {
+  color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.email-icon.invalid {
+  color: #f44336;
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.right-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.loading-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), #ffb800);
+  margin-top: 5px; /* Posiziona la barra di caricamento più in alto */
+  border-radius: 2px;
+  position: relative; /* Assicura che la barra di caricamento non influisca sulla posizione della card */
+  top: -10px; /* Sposta la barra di caricamento più in alto */
+}

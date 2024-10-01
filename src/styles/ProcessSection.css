@@ -1,0 +1,206 @@
+.process-section {
+  padding: 50px 20px;
+  background-color: var(--background-color);
+}
+
+.process-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative; /* Aggiunto per posizionare le immagini */
+}
+
+.process-section-subtitle {
+  font-size: 16px;
+  margin-bottom: -16px;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  text-align: center;
+  background-image: linear-gradient(
+    309deg,
+    rgb(255, 236, 166) 2.25225%,
+    rgb(255, 204, 51) 48.0785%,
+    rgb(255, 170, 0) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3),
+    0 0 15px rgba(255, 215, 0, 0.2), 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.process-section-header h1 {
+  font-family: var(--font-primary);
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  font-size: 47px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.18);
+}
+
+.process-section-header p {
+  font-size: 16px;
+  color: #999999;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.process-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.process-cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.process-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.process-card {
+  width: 615px;
+  height: 250px;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(97, 87, 0, 0.48);
+  background-image: url("src/assets/line-background.svg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.process-card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(17, 15, 0, 0.69));
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.process-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.process-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.process-card h3 {
+  font-family: var(--font-primary);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  font-size: 34px;
+  margin-top: 1px;
+  margin-bottom: 10px;
+
+  margin-left: 10px; /* Aggiunto margine sinistro */
+  margin-right: 10px; /* Aggiunto margine destro */
+}
+
+.process-card p {
+  margin: 0 10px;
+  font-size: 15px;
+  color: #ffffffcc;
+}
+
+.process-card-right-box {
+  width: 100px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(220.55deg, #0c0c0c 0%, #000000 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffffcc;
+  font-size: 18px;
+  font-weight: 600;
+  transform: translateY(-28px) translateX(5px);
+}
+
+/* Aggiunto per creare lo spazio tra le card */
+.process-row:last-child {
+  margin-bottom: 0;
+}
+
+.process-card:first-child {
+  margin-right: 15px;
+}
+
+.process-card:last-child {
+  margin-left: 15px;
+}
+
+.process-images-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.process-line-left,
+.process-line-right,
+.process-chip-left,
+.process-chip-right {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.process-line-left {
+  left: 60px;
+}
+
+.process-chip-left {
+  left: 225px;
+  top: 36px;
+}
+
+.process-line-right {
+  right: 60px;
+}
+
+.process-chip-right {
+  right: 225px;
+  top: 36px;
+}
+
+@media (max-width: 768px) {
+  .process-card-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .process-images-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

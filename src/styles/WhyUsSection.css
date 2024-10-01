@@ -1,0 +1,397 @@
+.why-us-section {
+  padding: 50px 0;
+  background-color: var(--background-color);
+  position: relative; /* Aggiunto */
+  margin-top: 60px;
+}
+
+.why-us-header {
+  text-align: center;
+  margin-bottom: 80px;
+  z-index: 3;
+}
+
+.why-us-header h1 {
+  font-family: var(--font-primary);
+  font-size: 2.5em;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  margin-top: -10px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  max-width: 700px;
+  margin: 0 auto;
+  transform: translateY(17px);
+}
+
+.why-us-header p {
+  font-size: 1.2em;
+  color: #ffffffcc;
+}
+
+.why-us-glow-effect {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1250px;
+  height: 200px;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(255, 215, 0, 0.8) 0%,
+    rgba(255, 215, 0, 0.1) 50%,
+    rgba(255, 215, 0, 0) 70%
+  );
+  filter: blur(10px);
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.why-us-glow-effect::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 215, 0, 0) 0%,
+    rgba(255, 215, 0, 0.5) 50%,
+    rgba(255, 215, 0, 0) 100%
+  );
+}
+
+.main-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin-top: -20px;
+  min-height: 400px;
+  margin: 0 auto 30px;
+  padding: 3px; /* Aggiunto padding per mostrare il bordo */
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(97, 87, 0, 0.48);
+  background: #000; /* Aggiunto background per il bordo */
+}
+
+.main-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    transparent 50deg,
+    #ffd700 80deg,
+    transparent 100deg
+  );
+  filter: blur(8px);
+  border-radius: 16px;
+  animation: border-animation -0.64s linear 4s infinite;
+  will-change: transform;
+}
+
+.main-card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: linear-gradient(
+      0deg,
+      rgba(10, 9, 0, 0.96),
+      rgba(07, 07, 08, 0.96)
+    ),
+    linear-gradient(100.41deg, #000000 0.52%, #070708 100.52%);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.main-card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.mini-cards-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1210px;
+  margin: 0 auto;
+}
+
+.mini-card {
+  position: relative;
+  width: 405px;
+  height: 215px;
+  padding: 4px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(97, 87, 0, 0.48);
+  background-image: url("src/assets/line-background.svg"); /* Aggiungi questa riga */
+  background-size: cover; /* Aggiungi questa riga */
+  background-position: center; /* Aggiungi questa riga */
+  z-index: 0; /* Aumentato il valore di z-index */
+}
+
+.mini-card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(17, 15, 0, 0.69));
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.mini-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Assicura che il padding non aumenti la dimensione totale */
+}
+
+.icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(220.55deg, #0c0c0c 0%, #181818 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  margin-left: 10px; /* Aggiunto margine sinistro */
+}
+
+.icon-container svg {
+  font-size: 21px;
+  color: #ffd700;
+}
+
+.mini-card-content h3 {
+  font-family: "GT Walsheim Bold", sans-serif;
+  font-size: 1.5em;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  margin-left: 10px; /* Aggiunto margine sinistro */
+  margin-right: 10px; /* Aggiunto margine destro */
+}
+
+.mini-card-content p {
+  margin: 0 10px; /* Aggiunto margine sinistro e destro */
+}
+
+@keyframes border-animation {
+  0% {
+    transform: translateY(-25%) translateX(40%) rotate(0deg);
+  }
+  30% {
+    transform: translateY(0) translateX(0) rotate(90deg) scaleX(0.7);
+  }
+  50% {
+    transform: translateY(-25%) translateX(-40%) rotate(180deg);
+  }
+  70% {
+    transform: translateY(0) translateX(0) rotate(270deg) scaleX(0.7);
+  }
+  to {
+    transform: translateY(-25%) translateX(40%) rotate(1turn);
+  }
+}
+
+.mini-card:not(:last-child) {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .why-us-section {
+    padding: 20px 0; /* Ridotto il padding */
+  }
+
+  .main-card {
+    width: 85%;
+  }
+
+  .mini-card {
+    width: 80%;
+    max-width: 80%;
+    height: auto;
+    min-height: 180px;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  .mini-card::before {
+    inset: -3px;
+  }
+
+  .mini-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mini-card {
+    width: 80%;
+    max-width: 80%; /* Assicura che non superi la larghezza del contenitore */
+    height: auto;
+    min-height: 180px; /* Ridotta l'altezza minima */
+    margin-bottom: 20px;
+    padding: 15px; /* Ridotto il padding */
+  }
+
+  .mini-card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .mini-card-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon-container {
+    margin-left: 0; /* Rimuove il margine sinistro su schermi piccoli */
+  }
+
+  .mini-card-content h3,
+  .mini-card-content p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.video-wave-preview {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  object-fit: cover;
+  border-radius: 13px;
+  opacity: 1;
+  margin-top: 2px;
+  transition: all 0.3s ease; /* Aggiunto per la transizione */
+}
+
+.video-wave-preview:hover {
+  filter: brightness(0.5); /* Scura l'immagine */
+}
+
+.video-wave-preview:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  background: radial-gradient(
+    circle,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  ); /* Ombra radiale */
+}
+
+.play-video-button,
+.close-video-button {
+  background: #ffd700;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 21px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-video-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Nascondi di default */
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .play-video-button {
+    display: flex; /* Mostra sui dispositivi touch */
+  }
+}
+
+.close-video-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000001;
+  max-width: 1920px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.close-video-button.visible {
+  opacity: 1;
+}
+
+.play-video-button:hover,
+.close-video-button:hover {
+  background: #e6b800;
+  box-shadow: 0 0px 12px rgba(255, 255, 255, 0.3);
+}
+
+.play-video-button:focus,
+.close-video-button:focus {
+  outline: none;
+}
+
+.video-wave-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  cursor: default; /* Aggiunto per evitare conflitti con il cursore personalizzato */
+}
+
+.video-wave-container {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-video-button .icon,
+.close-video-button .icon {
+  width: 21px; /* Imposta la larghezza dell'icona */
+  height: 21px; /* Imposta l'altezza dell'icona */
+  transition: transform 0.3s ease;
+}
+
+.play-video-button .icon:hover,
+.close-video-button .icon:hover {
+  transform: scale(0.85);
+}

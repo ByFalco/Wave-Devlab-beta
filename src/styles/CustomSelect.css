@@ -1,0 +1,77 @@
+.custom-select-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  font-family: var(--font-primary);
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.select-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--secondary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-header:hover {
+  border-color: var(--primary-color);
+}
+
+.select-arrow {
+  transition: transform 0.3s ease;
+}
+
+.select-arrow.open {
+  transform: rotate(180deg);
+}
+
+.select-options {
+  background-color: rgba(7, 7, 8, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.select-options li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.select-options li:hover,
+.select-options li.selected {
+  background-color: rgba(255, 215, 0, 0.7);
+}
+
+/* Stile per la scrollbar */
+.select-options::-webkit-scrollbar {
+  width: 4px;
+}
+
+.select-options::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0 10px 10px 0;
+}
+
+.select-options::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}

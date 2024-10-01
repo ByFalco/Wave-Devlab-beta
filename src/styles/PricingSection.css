@@ -1,0 +1,537 @@
+/* PricingSection.css */
+
+:root {
+  --rotation: 2.5rad;
+  --m: 4rem;
+  --red: #ffe700;
+  --pink: #ffd700;
+  --purple: #ffc700;
+  --blue: #ffb700;
+  --green: #ffd700;
+  --yellow: #ffc700;
+  --orange: #ffe700;
+}
+
+/* Contenitore principale della sezione prezzi */
+.pricing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem 2rem;
+  background-color: #000000; /* Sfondo nero */
+  color: #ffffff; /* Testi bianchi */
+}
+
+/* Card principale */
+.main-price-card {
+  background: linear-gradient(0deg, rgb(0, 0, 0), rgb(0, 0, 0)),
+    linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),
+    linear-gradient(
+      90deg,
+      var(--orange),
+      var(--yellow),
+      var(--green),
+      var(--blue),
+      var(--purple),
+      var(--pink),
+      var(--red)
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 2px 15px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 1180px;
+  height: 155px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  z-index: 0; /* Aggiungi questa linea */
+}
+
+.main-price-card::before {
+  content: "";
+  background: linear-gradient(
+    90deg,
+    var(--orange),
+    var(--yellow),
+    var(--green),
+    var(--blue),
+    var(--purple),
+    var(--pink),
+    var(--red)
+  );
+  height: 30%;
+  width: 100%; /* Cambia la larghezza al 100% */
+  position: absolute;
+  bottom: -20%;
+  left: 0; /* Aggiungi questa linea per allineare a sinistra */
+  z-index: -5;
+  background-size: 200%;
+  animation: animate 1.5s infinite linear;
+  filter: blur(calc(0.8 * var(--m)));
+}
+
+.main-price-card::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: linear-gradient(0deg, rgba(10, 9, 0, 1), rgba(07, 07, 08, 18)),
+    linear-gradient(100.41deg, #000000 0.52%, #070708 100.52%);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.main-price-card:hover,
+.main-price-card:hover::before {
+  animation: animate 1.2s infinite linear;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.main-price-card .main-price-title {
+  font-family: var(--font-primary);
+  letter-spacing: -0.04em;
+  font-size: 47px;
+  font-weight: bold;
+  color: #ffffff;
+  grid-column: 2 / 3; /* Seconda colonna */
+  text-align: center;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+.main-price-description {
+  grid-column: 2 / 3; /* Seconda colonna */
+  text-align: center;
+  font-size: 16px; /* Dimensione del font per la descrizione */
+  color: #999999; /* Colore del testo */
+  margin-top: 0.1rem; /* Spazio sopra la descrizione */
+  position: relative;
+  z-index: 1;
+  font-weight: 400; /* Peso del font per un aspetto più minimal */
+  line-height: 1.2; /* Riduci l'altezza della linea per meno spazio verticale */
+}
+
+.main-price-card .plan-selector {
+  grid-column: 1 / 2; /* Prima colonna */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  position: relative;
+}
+
+.main-price-card .plan-selector .label,
+.main-price-card .discount-switch .label {
+  margin-bottom: 1rem; /* Spazio tra il testo e il selettore */
+  font-size: 18px;
+  color: #ffffffcc; /* Dettagli in oro/giallo */
+}
+
+.main-price-card .plan-selector .custom-select {
+  font-size: 0.9rem; /* Riduci la dimensione del font */
+  max-width: 155px;
+}
+
+.plan-description {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.main-price-card .discount-switch {
+  grid-column: 3 / 4; /* Terza colonna */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
+  position: relative;
+}
+
+.tag-description {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-align: right;
+  z-index: 1;
+  position: relative;
+}
+
+.discount-switch .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.discount-switch .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.discount-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.discount-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #ffffff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.discount-switch input:checked + .slider {
+  background-color: #ffd700; /* Oro quando attivo */
+}
+
+.discount-switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Contenitore delle card settoriali */
+.sector-cards {
+  display: flex;
+  flex-wrap: nowrap; /* Cambia da wrap a nowrap */
+  gap: 2.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Titolo delle card settoriali */
+.sector-cards .sector-title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffd700; /* Oro per i titoli */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-price-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .main-price-card .plan-selector,
+  .main-price-card .discount-switch {
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .sector-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sector-cards .price-card {
+    width: 90%;
+  }
+}
+
+/* PricingCard.css */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(21px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(21px);
+  }
+}
+
+/* Card singola dei prezzi */
+.price-card {
+  border: 2px solid transparent;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 2px 15px rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  width: 365px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Aggiungi per il badge */
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1),
+      rgba(14, 12, 0, 0.99)
+    ),
+    linear-gradient(calc(var(--rotation)), #888 0, #444 20%, transparent 80%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: fadeIn 0.7s ease forwards;
+  overflow: hidden; /* Aggiungi questa riga per nascondere il contenuto eccedente */
+}
+
+.price-card.fade-out {
+  animation: fadeOut 0.7s ease forwards;
+}
+
+.price-card .price-card-image {
+  position: absolute;
+  top: 0; /* Regola la posizione verticale */
+  left: 50%; /* Centra orizzontalmente */
+  transform: translateX(-50%);
+  width: 420px; /* Regola la larghezza dell'immagine */
+  height: auto; /* Mantieni le proporzioni */
+  z-index: 2; /* Assicurati che l'immagine sia sopra gli altri elementi */
+}
+
+.price-card .card-header {
+  text-align: left; /* Allinea a sinistra */
+  margin-bottom: 1.2rem;
+}
+
+.price-card .card-title {
+  font-weight: bold;
+  font-size: 1.5rem; /* Titolo piccolo */
+  color: transparent; /* Trasparente per mostrare il gradiente */
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Effetto sfumato */
+  margin-bottom: 0.5rem;
+}
+
+@keyframes priceFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes priceFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateX(-10px);
+  }
+}
+
+.price-card .price {
+  font-size: 3rem; /* Prezzo grande */
+  background-image: linear-gradient(
+    309deg,
+    rgb(255, 236, 166) 2.25225%,
+    rgb(255, 204, 51) 48.0785%,
+    rgb(255, 170, 0) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.2), 0 0 10px rgba(255, 215, 0, 0.15),
+    0 0 15px rgba(255, 215, 0, 0.1), 0 0 20px rgba(255, 215, 0, 0.05);
+  text-align: left; /* Allinea a sinistra */
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.price-card .price.fade-in {
+  animation: priceFadeIn 0.5s ease forwards;
+}
+
+.price-card .price.fade-out {
+  animation: priceFadeOut 0.5s ease forwards;
+}
+
+.price-card .price .euro-symbol {
+  font-size: 2.1rem; /* Dimensione più piccola */
+  margin-left: 0.2rem; /* Spazio tra il prezzo e il simbolo */
+}
+
+.price-card .description {
+  font-size: 18px;
+  color: #dddddd;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  position: relative; /* Aggiunto per posizionare le linee */
+}
+
+.price-card .features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.price-card .features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.price-card .features .feature-icon {
+  margin-right: 0.5rem;
+  color: #ffd700; /* Icona in oro/giallo */
+  width: 21px;
+  height: 21px;
+  font-size: 21px;
+}
+
+.price-card .cta-button-container {
+  margin-top: auto;
+  text-align: center;
+}
+
+.price-card .cta-button {
+  background: transparent; /* Sfondo trasparente */
+  border: 2px solid #ffffff; /* Bordo bianco */
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 280px;
+  color: #ffffff; /* Testo bianco */
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.price-card .cta-button:hover {
+  background: #ffffff; /* Sfondo bianco al passaggio del mouse */
+  color: #000000; /* Testo nero al passaggio del mouse */
+  transform: scale(1.05);
+}
+
+/* Stile per la card centrale */
+.price-card.best-value {
+  border: 2px solid #ffd700; /* Bordo giallo */
+}
+
+.price-card.best-value .cta-button {
+  background: linear-gradient(
+    309deg,
+    rgb(255, 236, 166) 2.25225%,
+    rgb(255, 204, 51) 48.0785%,
+    rgb(255, 170, 0) 100%
+  );
+  color: #000000; /* Testo nero */
+  border: none; /* Nessun bordo */
+}
+
+.price-card.best-value .cta-button:hover {
+  opacity: 0.7;
+  color: #000000; /* Testo nero */
+}
+
+/* Badge "Best Value" */
+.best-value-badge {
+  font-family: GT Walsheim Bold, sans-serif;
+  position: absolute;
+  letter-spacing: -0.01em;
+  top: 30px;
+  right: -40px;
+  background: linear-gradient(
+    45deg,
+    #ffd700,
+    #ffae00
+  ); /* Gradiente giallo-arancione */
+  color: #000000; /* Testo nero */
+  padding: 0.5rem 2.5rem; /* Aumenta leggermente il padding */
+
+  font-size: 1rem; /* Aumenta leggermente la dimensione del font */
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra */
+  text-transform: uppercase; /* Testo in maiuscolo */
+  letter-spacing: 1px; /* Aggiungi spaziatura tra le lettere */
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-left {
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  top: 80%;
+  transform: translateY(-90%);
+  width: 606px;
+  height: 500px; /* Regola l'altezza secondo necessità */
+  opacity: 1;
+  filter: brightness(0.6);
+  z-index: 0;
+}
+
+.banner-right {
+  position: absolute;
+  right: 0;
+  top: 80%;
+  opacity: 1;
+  transform: translateY(-90%) scaleX(-1); /* Aggiunto scaleX(-1) per capovolgere orizzontalmente */
+  width: 606px;
+  height: 500px; /* Regola l'altezza secondo necessità */
+  opacity: 1;
+  filter: brightness(0.6);
+  z-index: 0;
+}
+
+/* Disabilita il link del watermark quando il supporto chat è aperto */
+.chat-open .watermark-link {
+  pointer-events: none;
+  opacity: 0.5; /* Opzionale: indica visivamente che è disabilitato */
+  cursor: not-allowed; /* Opzionale: cambia il cursore per indicare che è disabilitato */
+}
